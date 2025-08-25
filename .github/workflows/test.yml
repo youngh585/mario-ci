@@ -1,0 +1,21 @@
+name: Mario CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    # Use CS50's CLI image so libcs50 and tools are preinstalled
+    container: cs50/cli:latest
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure scripts are executable
+        run: chmod +x tests/run_mario_tests.sh
+
+      - name: Run tests
+        run: tests/run_mario_tests.sh
