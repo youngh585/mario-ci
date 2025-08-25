@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # 1) Build (adjust the path if your mario.c is elsewhere)
-clang -Wall -Wextra -Werror -std=c11 -O2 -o mario mario-less/mario.c
+clang -Wall -Wextra -Werror -std=c11 -O2 -DCI -o mario mario-less/mario.c
 
 # If your code prints a prompt like "Height: ", hide it in CI:
 # clang ... -DCI -o mario mario-less/mario.c
