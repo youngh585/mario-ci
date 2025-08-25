@@ -1,4 +1,8 @@
+#ifdef CI
+#include "ci_cs50_shim.h"
+#else
 #include <cs50.h>
+#endif
 #include <stdio.h>
 
 void print_row(int spaces, int bricks);
